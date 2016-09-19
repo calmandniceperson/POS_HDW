@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ConsoleApplication {
@@ -14,15 +13,8 @@ namespace ConsoleApplication {
 
         private byte[] data;
 
-        List<int[]> drawPatterns; 
-
-        private static int[] pattern_one = {1495, 1496, 1497, 1498, 1499, 1500, 1538, 1578, 1618, 1658, 1698,
-                                            1738};
-
         public Bitmap(byte[] data) {
             this.data = data;
-            drawPatterns = new List<int[]>();
-            drawPatterns.Add(pattern_one);
         }
 
         override public String ToString() {
