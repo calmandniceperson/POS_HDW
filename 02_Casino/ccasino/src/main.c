@@ -107,14 +107,14 @@ void wdraw(int32_t* amount)
 /* Handles starting entries */
 void start(char* line_buf)
 {
-	printf("%s", line_buf);
 	get_val_port(line_buf, &money_curr, sizeof(START_BUDGET_STR));
+	printf("Start budget: %d Euros\n", money_curr);
 }
 
 /* Handle guesses for even numbers */
 void even(char* line_buf, int *number, int *val)
 {
-	printf("Gerade: %s", line_buf);
+	printf("Even guess: %s", line_buf);
 	get_val_port(line_buf, val, strlen("G "));
 	wdraw(val);
 	if (*number != 0 && *number % 2 == 0) {
@@ -128,7 +128,7 @@ void even(char* line_buf, int *number, int *val)
 /* Handle guesses for odd numbers */
 void odd(char* line_buf, int* number, int* val)
 {
-	printf("Ungerade: %s", line_buf);
+	printf("Odd guess: %s", line_buf);
 	get_val_port(line_buf, val, strlen("U "));
 	wdraw(val);
 	if (*number % 2 != 0) {
@@ -143,7 +143,7 @@ void odd(char* line_buf, int* number, int* val)
 /* Handles exact guesses for numbers */
 void exact(char* line_buf, int* number, int* val)
 {
-	printf("Exakt: %s", line_buf);
+	printf("Exact guess: %s", line_buf);
 	get_val_port(line_buf, val, 2);
 	wdraw(val);
 	int32_t ex;
@@ -199,7 +199,7 @@ void step(char *line_buf)
 			break;
 		case STR:
 			get_name(line_buf);
-			printf("Spieler %s spielt...\n", p_name);
+			printf("Player %s playing...\n", p_name);
 			break;
 	}
 
