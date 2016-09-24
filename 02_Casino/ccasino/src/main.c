@@ -120,7 +120,7 @@ void even(char* line_buf, int *number, int *val)
 	if (*number != 0 && *number % 2 == 0) {
 		*val = *val * 2;
 		money_curr += *val;
-		printf("\nPlayer %s guess an even number (%d)\n", p_name, *number);
+		printf("Player %s guess an even number (%d)\n", p_name, *number);
 		printf("and won %d Euros.\n\n", *val);
 	}
 }
@@ -134,7 +134,7 @@ void odd(char* line_buf, int* number, int* val)
 	if (*number % 2 != 0) {
 		*val = *val * 2;
 		money_curr += *val;
-		printf("\nPlayer %s guessed an odd number (%d)\n",
+		printf("Player %s guessed an odd number (%d)\n",
 		       p_name, *number);
 		printf("and won %d Euros.\n\n", *val);
 	}
@@ -151,7 +151,7 @@ void exact(char* line_buf, int* number, int* val)
 	if (ex == *number) {
 		*val = *val * 7;
 		money_curr += *val;
-		printf("\nWow! Player %s guessed the exact right number (%d)\n",
+		printf("Wow! Player %s guessed the exact right number (%d)\n",
 		       p_name, *number);
 		printf("and won %d Euros.\n\n", *val);
 	}
