@@ -85,7 +85,7 @@ enum input_type get_input_type(const char *line_buf)
 
 /* 
  * Fetches part stating actual amount of money from start budget string, copies
- *it to a separate array, converts it to int32_t and stores it in dest
+ * it to a separate array, converts it to int32_t and stores it in dest
  */
 void get_val_port(const char *line_buf, int32_t* dest, int32_t len)
 {
