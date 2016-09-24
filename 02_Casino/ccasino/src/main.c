@@ -164,14 +164,16 @@ void end()
 	       p_name, money_curr);
 }
 
-void prnt_n_string(char* line_buf)
+/* 
+ * Gets the players name from the given line buffer by removing the endline
+ * character
+ */
+void get_name(char* line_buf)
 {
 	/* remove \n */
 	p_name = malloc(sizeof(line_buf));
 	memcpy(p_name, &line_buf[0], sizeof(&p_name)+1);
-	if (strtok(p_name, "\n") != NULL) {
-		printf("Spieler %s spielt...\n", p_name);
-	}
+	strtok(p_name, "\n");
 }
 
 /* A single game loop step */
@@ -196,7 +198,8 @@ void step(char *line_buf)
 			end();
 			break;
 		case STR:
-			prnt_n_string(line_buf);
+			get_name(line_buf);
+			printf("Spieler %s spielt...\n", p_name);
 			break;
 	}
 
