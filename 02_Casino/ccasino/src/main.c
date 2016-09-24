@@ -94,6 +94,16 @@ void get_val_port(const char *line_buf, int32_t* dest, int32_t len)
 	sscanf(am_buf, "%"SCNd32, dest);
 }
 
+/* Tries to withdraw amount from money_curr */
+void wdraw(int32_t* amount)
+{
+	money_curr -= *amount;
+	if (money_curr < 0) {
+		fprintf(stderr, "Player %s doesn't have any money left.\n", p_name);
+		exit(1);
+	}
+}
+
 /* Handles starting entries */
 void start(char* line_buf)
 {
@@ -106,7 +116,7 @@ void even(char* line_buf, int *number, int *val)
 {
 	printf("Gerade: %s", line_buf);
 	get_val_port(line_buf, val, strlen("G "));
-	money_curr -= *val;
+	wdraw(val);
 	if (*number != 0 && *number % 2 == 0) {
 		*val = *val * 2;
 		money_curr += *val;
@@ -120,7 +130,7 @@ void odd(char* line_buf, int* number, int* val)
 {
 	printf("Ungerade: %s", line_buf);
 	get_val_port(line_buf, val, strlen("U "));
-	money_curr -= *val;
+	wdraw(val);
 	if (*number % 2 != 0) {
 		*val = *val * 2;
 		money_curr += *val;
@@ -135,6 +145,7 @@ void exact(char* line_buf, int* number, int* val)
 {
 	printf("Exakt: %s", line_buf);
 	get_val_port(line_buf, val, 2);
+	wdraw(val);
 	int32_t ex;
 	sscanf(&line_buf[0], "%"SCNd32, &ex);
 	if (ex == *number) {
