@@ -8,6 +8,7 @@
 #include <inttypes.h>
 #include <string.h>
 #include <ctype.h>
+#include <time.h>
 #include <openssl/rand.h>
 
 /* printed to inform the user about how to use this application */
@@ -34,11 +35,14 @@ enum input_type
 
 /* File to be read from */
 FILE *file;
+FILE *out_file;
+
+char *t_now;
 
 /* Current amount of money */
 int32_t money_curr;
 /* The player's name */
-char* p_name;
+char *p_name;
 
 /*
  * Generates a random unsigned integer between 0 and max by using OpenSSL's
@@ -94,12 +98,30 @@ void get_val_port(const char *line_buf, int32_t* dest, int32_t len)
 	sscanf(am_buf, "%"SCNd32, dest);
 }
 
+/* Returns the current system time as char array without newline character */
+char* get_curr_time()
+{
+	time_t t = time(0);
+	char *time_buf = ctime(&t);
+	t_now = malloc(strlen(time_buf)-1);
+	strncpy(t_now, time_buf, strlen(time_buf)-1);
+	return t_now;
+}
+
 /* Tries to withdraw amount from money_curr */
 void wdraw(int32_t* amount)
 {
 	money_curr -= *amount;
 	if (money_curr < 0) {
 		fprintf(stderr, "Player %s doesn't have any money left.\n", p_name);
+		time_t t_now = time(0);
+		fprintf(out_file, "%s: Player broke\n", get_curr_time());
+		exit(1);
+	} else if (*amount < 1 || *amount > 999) {
+		fprintf(stderr, "Player %s placed an invalid amount of money\n",
+			p_name);
+		fprintf(out_file, "%s: Player placed an invalid amount of money.\n",
+			get_curr_time());
 		exit(1);
 	}
 }
@@ -109,6 +131,8 @@ void start(char* line_buf)
 {
 	get_val_port(line_buf, &money_curr, sizeof(START_BUDGET_STR));
 	printf("Start budget: %d Euros\n", money_curr);
+	fprintf(out_file, "%s: Start budget: %d Euros\n", get_curr_time(),
+		money_curr);
 }
 
 /* Handle guesses for even numbers */
@@ -162,6 +186,11 @@ void end()
 {
 	printf("\nThat's it, folks!\nPlayer %s has a total of %d Euros.\n",
 	       p_name, money_curr);
+	fprintf(out_file, "%s: End budget: %d Euros\n", get_curr_time(),
+		money_curr);
+	fclose(file);
+	fclose(out_file);
+	exit(1);
 }
 
 /* 
@@ -213,6 +242,7 @@ int main(int argc, char **argv)
 	}
 
 	file = fopen(argv[1], "r");
+	out_file = fopen(argv[1], "a+");
 	char line_buf[255];
 	while(fgets(line_buf, sizeof(line_buf), file) != NULL) {
 		step(line_buf);
