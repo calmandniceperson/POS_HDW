@@ -67,7 +67,8 @@ unsigned int random_uint(unsigned int max)
 /* get input type of current line */
 enum input_type get_input_type(const char *line_buf)
 {
-	if (strncmp(line_buf, START_BUDGET_STR, strlen(START_BUDGET_STR)) == 0) {
+	if (strncmp(line_buf, START_BUDGET_STR,
+		    strlen(START_BUDGET_STR)) == 0) {
 		return START_BUDGET;
 	} else if (strncmp(line_buf, END_STR, strlen(END_STR)) == 0) {
 		return END;
@@ -113,14 +114,16 @@ void wdraw(int32_t* amount)
 {
 	money_curr -= *amount;
 	if (money_curr < 0) {
-		fprintf(stderr, "Player %s doesn't have any money left.\n", p_name);
+		fprintf(stderr, "Player %s doesn't have any money left.\n",
+			p_name);
 		time_t t_now = time(0);
 		fprintf(out_file, "%s: Player broke\n", get_curr_time());
 		exit(1);
 	} else if (*amount < 1 || *amount > 999) {
 		fprintf(stderr, "Player %s placed an invalid amount of money\n",
 			p_name);
-		fprintf(out_file, "%s: Player placed an invalid amount of money.\n",
+		fprintf(out_file,
+			"%s: Player placed an invalid amount of money.\n",
 			get_curr_time());
 		exit(1);
 	}
@@ -144,7 +147,8 @@ void even(char* line_buf, int *number, int *val)
 	if (*number != 0 && *number % 2 == 0) {
 		*val = *val * 2;
 		money_curr += *val;
-		printf("Player %s guess an even number (%d)\n", p_name, *number);
+		printf("Player %s guess an even number (%d)\n", p_name,
+		       *number);
 		printf("and won %d Euros.\n\n", *val);
 	}
 }
