@@ -214,7 +214,7 @@ int main(int argc, char **argv)
 
 	file = fopen(argv[1], "r");
 	char line_buf[255];
-	while(fgets(line_buf, sizeof(line_buf), (FILE*)file) != NULL) {
+	while(fgets(line_buf, sizeof(line_buf), file) != NULL) {
 		step(line_buf);
 	}
 	return 0;
