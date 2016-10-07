@@ -24,15 +24,16 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             Console.Clear();
-            // First wait for the next full minute.
-            Thread.Sleep((60-DateTime.Now.Second)*1000);
 
             // Create a callback method that will be called every time there
             // is a Timer tick.
             TimerCallback cb = new TimerCallback(OnMinute);
 
+            // Calculate delay based on how much time is left until the next
+            // full minute.           
+            var delay = (60-DateTime.Now.Second)*1000;
             // New Timer calling cb every 60 seconds.
-            t = new System.Threading.Timer(cb, null, 0, 60*1000);
+            t = new System.Threading.Timer(cb, null, delay, 60*1000);
 
             // Wait for input so the program doesn't close.
             Console.ReadKey();
