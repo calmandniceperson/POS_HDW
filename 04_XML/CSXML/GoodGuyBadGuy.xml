@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Nodes>
+  <!-- GoodGuyBadGuy V1.0, 16-Oct-2015 Gruppe A1-->
+  <GoodGuys>
+    <!-- eigene Adresse einsetzen -->
+    <IPAddress>10.9.8.7</IPAddress>
+    <!-- eigene Adresse einsetzen -->
+    <IPAddress Port="8080">10.9.8.7</IPAddress>
+  </GoodGuys>
+  
+  <!-- GoodGuyBadGuy V1.0, 16-Oct-2015 Gruppe A2-->
+  <BadGuys>
+    <!-- eigene Adresse einsetzen -->
+    <IPAddress>10.9.8.7</IPAddress>
+    <!-- eigene Adresse einsetzen -->
+    <IPAddress Port="9090">10.9.8.7</IPAddress>
+  </BadGuys>
+
+  <!-- GoodGuyBadGuy V1.0, 16-Oct-2015 Gruppe B1-->
+  <GoodGuys>
+    <Hostname>www.google.com</Hostname>
+    <Hostname Port="8080">www.microsoft.com</Hostname>
+  </GoodGuys>
+  
+  <!-- GoodGuyBadGuy V1.0, 16-Oct-2015 Gruppe B2-->
+  <BadGuys>
+    <Hostname>www.google.com</Hostname>
+    <Hostname Port="9090">www.microsoft.com</Hostname>
+  </BadGuys>
+</Nodes>
+
+
