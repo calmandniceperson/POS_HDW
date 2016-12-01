@@ -11,6 +11,6 @@ public class Main {
             b.doStep();
             i++;
         }
-        System.out.println(String.format("Steps: %d; Time: %fms",  i, i*Ball.TIMESTEP_IN_S));
+        System.out.println(String.format("Steps: %d; Time: %fms",  i, (i*Ball.TIMESTEP_IN_S)*1000));
     }
 }

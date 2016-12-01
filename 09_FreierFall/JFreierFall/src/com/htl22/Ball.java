@@ -8,13 +8,16 @@ class Ball {
     private static final double START_HEIGHT = 1.5;
     static final double TIMESTEP_IN_S = 10.0/1000.0; // 10 ms per step in seconds (0.01)
     private double currentHeight;
+    private double currentMs;
 
     void drop() {
         this.currentHeight = START_HEIGHT;
+        this.currentMs = TIMESTEP_IN_S;
     }
 
     void doStep() {
-        currentHeight -= (GRAVITY * Math.pow(TIMESTEP_IN_S, 2))/2;
+        currentHeight = (GRAVITY * Math.pow(currentMs, 2))/2;
+        currentMs = currentHeight * 2;
         System.out.println(currentHeight);
     }
 
