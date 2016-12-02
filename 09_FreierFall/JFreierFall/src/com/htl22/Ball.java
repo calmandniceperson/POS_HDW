@@ -1,27 +1,35 @@
 package com.htl22;
 
 class Ball {
-
-    // h = (g*t^2)/2
-
     private static final double GRAVITY = 9.81;
     private static final double START_HEIGHT = 1.5;
-    static final double TIMESTEP_IN_S = 10.0/1000.0; // 10 ms per step in seconds (0.01)
-    private double currentHeight;
+    private static final double TIME_STEP_IN_S = 10.0/1000.0;
+
     private double currentMs;
+    private double travelledDistance;
+
+    Ball() {
+        this.currentMs = TIME_STEP_IN_S;
+    }
 
     void drop() {
-        this.currentHeight = START_HEIGHT;
-        this.currentMs = TIMESTEP_IN_S;
+        while (!isOnGround()) {
+            this.doStep();
+        }
     }
 
-    void doStep() {
-        currentHeight = (GRAVITY * Math.pow(currentMs, 2))/2;
-        currentMs = currentHeight * 2;
-        System.out.println(currentHeight);
+    private void doStep() {
+        travelledDistance = (GRAVITY * Math.pow(currentMs, 2)) /2;
+        currentMs += TIME_STEP_IN_S;
+        System.out.println(this.toString());
     }
 
-    boolean isOnGround() {
-        return currentHeight <= 0;
+    private boolean isOnGround() {
+        return travelledDistance >= START_HEIGHT;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Steps: %d, Time: %fms, Meter: %f\n", (int)(currentMs/TIME_STEP_IN_S), currentMs*1000, this.travelledDistance);
     }
 }
