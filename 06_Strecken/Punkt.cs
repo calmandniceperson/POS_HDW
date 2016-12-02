@@ -22,7 +22,7 @@ namespace ConsoleApplication
 
         override public string ToString()
         {
-            return $"Punkt  [x={x}, y={y}";
+            return $"Punkt  [x={x}, y={y}]";
         }
     }
 }

@@ -17,6 +17,16 @@ namespace ConsoleApplication
             return Math.Round(Math.Sqrt(Math.Pow((p2.getX() - p1.getX()), 2) + Math.Pow((p2.getY() - p1.getY()), 2)), 2);
         }
 
+        public Punkt getP1()
+        {
+            return p1;
+        }
+
+        public Punkt getP2()
+        {
+            return p2;
+        }
+
         override public string ToString()
         {
             return $"Strecke [p1={p1.ToString()}, p2={p2.ToString()}], Laenge: {length()}";
