@@ -16,7 +16,7 @@ public class Main {
 
         for (int i = 0; i < 5; i++) {
             b = new Ball(rnd.nextInt((max - min) + 1) + min, rnd.nextInt((max - min) + 1) + min,
-                    rnd.nextInt(11), rnd.nextInt(11));
+                    rnd.nextInt((11-(-11)) + 1) + (-11), rnd.nextInt((11-(-11)) + 1) + (-11));
             FieldManager.getInstance().addBall(b);
         }
 
