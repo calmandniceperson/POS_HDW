@@ -1,0 +1,116 @@
+PK,Klasse,KatalogNummer,Name,Vorname
+1,4AHIF,1,Bayin,Kemal
+2,4AHIF,2,Bilcsik,Paul
+3,4AHIF,3,Bischinger*,Lisa
+4,4AHIF,4,Fiedler,Lukas Michael
+5,4AHIF,5,Freistätter,Patrick
+6,4AHIF,6,Furian,Marcel Wolfgang
+7,4AHIF,7,Gratzl,Dominik
+8,4AHIF,8,Jovanovic,Ugljesa
+9,4AHIF,9,Kamenik,Michael Allan
+10,4AHIF,10,Langhammer*,Anika Erna
+11,4AHIF,11,Meznik,Dominic
+12,4AHIF,12,Petrovic,Toni
+13,4AHIF,13,Reiseneder,Sebastien
+14,4AHIF,14,Rieß,Moritz
+15,4AHIF,15,Rittmannsberger,Daniel
+16,4AHIF,16,Rogetzer,Maurice
+17,4AHIF,17,Rustemi,Leart
+18,4AHIF,18,Sajn,Andreas
+19,4AHIF,19,Tremurici,Norbert Cornelius
+20,4AHIF,20,Unzeitig*,Lisa
+21,4AHIF,21,Vitovec,Thomas
+22,4AHIF,22,Yin*,Xiangli
+23,4AHIF,23,Zivojinovic,Andrej
+24,4BHIF,1,Akinlade-Fajemiroku,David Folorunso
+25,4BHIF,2,Gavrilovic,Marko
+26,4BHIF,3,Gebauer,Alexander
+27,4BHIF,4,Lolic,Amar
+28,4BHIF,5,Matic,Marko
+29,4BHIF,6,Metzger,Calvin Patrick Aki
+30,4BHIF,7,Oksar,Haknur
+31,4BHIF,8,Prunner,Tobias
+32,4BHIF,9,Randhawa,Manraj
+33,4BHIF,10,Reisenhofer,Florian
+34,4BHIF,11,Reiter,Stefan Ernst
+35,4BHIF,12,Rührig,Thomas
+36,4BHIF,13,Schellmann,Raphael
+37,4BHIF,14,Schmid,Maximilian
+38,4BHIF,15,Wallner,Florian Martin
+39,4BHIF,16,Yassin,Karim
+40,4BHIF,17,Zuchalski,Sebastian
+41,4EHIF,1,Bergwein,Marco Raphael
+42,4EHIF,2,Eichler,Phillip
+43,4EHIF,3,Haltrich,Lothar Karl
+44,4EHIF,4,Iliev,Turpal-Ali
+45,4EHIF,5,Jungreuthmayer,Christopher
+46,4EHIF,6,Kriechbaum,Felix Gaston
+47,4EHIF,7,Lorenz,Jan
+48,4EHIF,8,Marschitz,Jan Gerd
+49,4EHIF,9,Nakicevic,Almir
+50,4EHIF,10,Ramadani,Besnik
+51,4EHIF,11,Rympo,Oliver Viktor
+52,4EHIF,12,Schmid,Michael
+53,4EHIF,13,Schneeweiß,Phillip Julian
+54,4EHIF,14,Slowak,Adrian Cornelius
+55,4EHIF,15,Weinberger,Roland
+56,4EHIF,16,Wieland,Dominik Viktor
+57,4EHIF,17,Winkler,Raphael
+58,4EHIF,18,Zelenay,David
+59,5AHIF,1,Aliji,Taulant
+60,5AHIF,2,Bauer,Daniel
+61,5AHIF,3,Bytyqi,Ramadan
+62,5AHIF,4,Derefaka,Alabo
+63,5AHIF,5,Frischmann,Bernd Michael
+64,5AHIF,6,Juhasz,Richard
+65,5AHIF,7,Koczwara,Georg Alexander
+66,5AHIF,8,Köppl,Michael
+67,5AHIF,9,Kovacevic,Bruno
+68,5AHIF,10,Kumar,Amanpreet
+69,5AHIF,11,Matus,Melih Can
+70,5AHIF,12,Poul*,Karina Anna-Maria
+71,5AHIF,13,Schnetzer,Benedikt Philipp
+72,5AHIF,14,Simic*,Martina
+73,5AHIF,15,Singh,Manavjot
+74,5AHIF,16,Spasojevic,Filip
+75,5AHIF,17,Tröstler,Markus Wilhelm
+76,5AHIF,18,Wang,Chen
+77,5AHIF,19,Wiltner,Philipp
+78,5AHIF,20,Xiang,Jinyang
+79,5AHIF,21,Zeilinger,Lukas
+80,5BHIF,1,Bartel,Lucas
+81,5BHIF,2,Gruszka,Robert
+82,5BHIF,3,Ji,Xingyun
+83,5BHIF,4,Karaca,Haci Murat
+84,5BHIF,5,Kolacz,Alexander Denis
+85,5BHIF,6,Kral,Fabio
+86,5BHIF,7,Linhart,Alexander
+87,5BHIF,8,Majnovic,David
+88,5BHIF,9,Pieber,Fabian
+89,5BHIF,10,Pobric,Slavisa
+90,5BHIF,11,Pop,Daniel
+91,5BHIF,12,Sabu,Prince
+92,5BHIF,13,Sensoy,Emre
+93,5BHIF,14,Shi,Jing Tao
+94,5BHIF,15,Slama,Marco
+95,5BHIF,16,Vuong,Viktor
+96,5BHIF,17,Yildiz,Onur
+97,5BHIF,18,Zota,Andreias-Victor
+98,5EHIF,1,Baric,Daniel
+99,5EHIF,2,Barsoum,Jonathan
+100,5EHIF,3,Hanisch,Daniel-Ray
+101,5EHIF,4,Kallenda,Andreas
+102,5EHIF,5,Knirschnig,Lukas
+103,5EHIF,6,Koch*,Katharina Gertrude
+104,5EHIF,7,Kowalski,Sebastian Alexander
+105,5EHIF,8,Kumar,Ronit
+106,5EHIF,9,Lal*,Sanjana
+107,5EHIF,10,Morajda,Christian
+108,5EHIF,11,Neidhart,Martin
+109,5EHIF,12,Özalp*,Kader-Gül
+110,5EHIF,13,Özcan,Deniz
+111,5EHIF,14,Pobric,Ljubisa
+112,5EHIF,15,Richter*,Alice
+113,5EHIF,16,Shahini*,Melina
+114,5EHIF,17,Streng,Nino
+115,5EHIF,18,Wimmer,Tobias
