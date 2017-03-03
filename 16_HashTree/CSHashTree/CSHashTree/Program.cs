@@ -18,12 +18,16 @@ namespace CSHashTree
 				Console.WriteLine("File not found");
 				return;
 			}
+
+			int elemCount = 0;
+
 			using (var fs = File.OpenRead(@path))
 			using (var reader = new StreamReader(fs))
 			{
 				reader.ReadLine(); // Skip title line
 				while (!reader.EndOfStream)
 				{
+					elemCount++;
 					var line = reader.ReadLine();
 					var values = line.Split(',');
 
@@ -33,6 +37,10 @@ namespace CSHashTree
 
 			BinaryHashTree<Student> tree = new BinaryHashTree<Student>();
 			tree.BulkCreate(studentList);
+
+			int layerCount = (int)Math.Ceiling(Math.Log(elemCount, 2) + 1);
+			double nodeCount = Math.Ceiling(Math.Pow(2, (layerCount+1)) - 1);
+			Console.WriteLine($"Number of elements: {elemCount}\nNumber of nodes: {nodeCount}\nNumber of layers: {layerCount}");
 		}
 	}
 }
