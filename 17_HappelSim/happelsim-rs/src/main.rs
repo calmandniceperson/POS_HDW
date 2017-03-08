@@ -10,11 +10,11 @@ fn main() {
     while visitors > 0 { // Loop until every visitor left
         if minutes_passed % 3 == 0 { // every three minutes...
             visitors -= LEAVE_COUNT;
-            println!("{} visitors left", LEAVE_COUNT);
+            println!("{} visitors just left", LEAVE_COUNT);
         }
         if minutes_passed % 5 == 0 { // every 5 minutes...
             println!("Length of queue (number of people): {}", visitors);
-            println!("Length of queue (in meters): {}", (visitors as f32/2.0)*0.5);
+            println!("Length of queue (in meters): {}", visitors/4); // x/4 = (x/2)*0.5
         }
         minutes_passed = minutes_passed + 1;
     }
