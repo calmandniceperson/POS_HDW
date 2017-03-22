@@ -20,7 +20,8 @@ namespace ConsoleApplication
             for (int i = 0; i < 400; i++)
             {
                 Console.Clear();
-                Console.WriteLine($"{time.Hour}:{time.Minute}");
+                string addString = time.Minute < 10 ? "0" : "";
+                Console.WriteLine($"{time.Hour}:{addString}{time.Minute.ToString()}");
                 
                 // Every 3 minutes (subway interval) a subway arrives with 100
                 // people in it.
